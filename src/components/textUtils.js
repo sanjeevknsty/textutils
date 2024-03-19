@@ -28,9 +28,10 @@ export default function TextUtils(props) {
 
 
   const copy = () => {
-    let textArea = document.getElementById('floatingTextarea2')
-    textArea.select()
-    navigator.clipboard.writeText(textArea.value)
+    // let textArea = document.getElementById('floatingTextarea2')
+    // textArea.select()
+    // navigator.clipboard.writeText(textArea.value)
+    navigator.clipboard.writeText(Text)
     document.getSelection().removeAllRanges()
     props.alertMessage('Text Copied', 'success')
   }
@@ -66,7 +67,7 @@ export default function TextUtils(props) {
   //   }
 
   // }
-  let length = Text.split(" ").filter((ele) => { return ele.length !== 0 }).length
+  let length = Text.split(/\s+/).filter((ele) => { return ele.length !== 0 }).length
   return (
     <>
 
